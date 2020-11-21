@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -e
 
 function timestamp {
   date +"%Y-%m-%dT%H:%M:%S"
