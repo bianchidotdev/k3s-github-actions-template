@@ -2,3 +2,6 @@
 
 kubectl get nodes
 kubectl get pods --all-namespaces
+
+sleep 5
+curl localhost:8081/

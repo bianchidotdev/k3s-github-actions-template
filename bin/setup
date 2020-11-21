@@ -3,5 +3,5 @@
 SCRIPT_DIR=$(dirname $0)
 
 k3d cluster create test --servers 2 --agents 2 \
-  --publish 8081:80 \
+  --api-port 6550 -p "8081:80@loadbalancer" \
   --volume $SCRIPT_DIR/../manifests:/var/lib/rancher/k3s/server/manifests
