@@ -1,8 +1,14 @@
 #!/usr/bin/env bash
+set -e
+
+SCRIPT_DIR=$(dirname $0)
 
 kubectl get nodes
-kubectl get pods --all-namespaces
-
-sleep 15
 kubectl get pods
-curl --fail localhost:8081/
+
+
+${SCRIPT_DIR}/wait-until-pods-ready 30 3
+
+# Handle "curl: (52) Empty reply from server"
+sleep 5
+curl --fail http://localhost:8081/
