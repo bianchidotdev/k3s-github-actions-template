@@ -27,7 +27,7 @@ for dependency in ${DEPS[@]}; do
   if test ! $(which $dependency); then
     cmd_var="${dependency}_cmd"
     log "Installing $dependency with ${!cmd_var}"
-    $(${!cmd_var})
-    else log "$dependency already installed"
+    eval ${!cmd_var}
+  else log "$dependency already installed"
   fi
 done
