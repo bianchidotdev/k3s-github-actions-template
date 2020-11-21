@@ -1,0 +1,19 @@
+name: Run Cluster Test
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  start:
+    name: cluster run
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+
+      - name: Install deps
+        run: ./bin/setup
+
+      - name: Create Cluster
+        run: k3d cluster create test --servers 2 --agents 2
