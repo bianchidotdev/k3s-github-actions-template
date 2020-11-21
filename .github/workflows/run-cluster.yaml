@@ -2,7 +2,7 @@ name: Run Cluster Test
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
 
 jobs:
   start:

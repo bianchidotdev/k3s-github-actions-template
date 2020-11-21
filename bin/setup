@@ -17,7 +17,7 @@ DEPS=(
   kustomize
 )
 
-k3d_cmd="wget -q -O - https://raw.githubusercontent.com/rancher/k3d/main/install.sh | bash"
+k3d_cmd="curl -s https://raw.githubusercontent.com/rancher/k3d/main/install.sh | bash"
 kubectl_cmd=""
 kustomize_cmd='curl -s "https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack/install_kustomize.sh"  | bash"'
 
